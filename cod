@@ -1,0 +1,22 @@
+.data
+num: .word0
+prompt: .asciiz "enter the no.:"
+final: .asciiz "is the squar"
+ 
+ .text
+ la $a0,prompt
+ li $v0,4
+ syscall
+ 
+ li $v0,5
+ syscall
+ 
+ sw $v0,num
+ lw $t0,num
+ mul $a0,$t0,$v0
+ 
+ li $v0,1
+ syscall
+ 
+ li $v0,10
+ syscall
